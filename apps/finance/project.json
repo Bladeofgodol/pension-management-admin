@@ -17,7 +17,7 @@
         "main": "apps/finance/src/main.ts",
         "tsConfig": "apps/finance/tsconfig.app.json",
         "assets": ["apps/finance/src/favicon.ico", "apps/finance/src/assets"],
-        "styles": ["apps/finance/src/styles.tailwind"],
+        "styles": ["apps/finance/src/styles.css"],
         "scripts": [],
         "webpackConfig": "apps/finance/webpack.config.ts",
         "postcssConfig": "apps/finance/postcss.config.js"

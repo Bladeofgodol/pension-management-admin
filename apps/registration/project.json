@@ -20,7 +20,7 @@
           "apps/registration/src/favicon.ico",
           "apps/registration/src/assets"
         ],
-        "styles": ["apps/registration/src/styles.tailwind"],
+        "styles": ["apps/registration/src/styles.css"],
         "scripts": [],
         "webpackConfig": "apps/registration/webpack.config.ts",
         "postcssConfig": "apps/registration/postcss.config.js"

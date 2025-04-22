@@ -17,7 +17,7 @@
         "main": "apps/admin/src/main.ts",
         "tsConfig": "apps/admin/tsconfig.app.json",
         "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
-        "styles": ["apps/admin/src/styles.tailwind"],
+        "styles": ["apps/admin/src/styles.css"],
         "scripts": [],
         "webpackConfig": "apps/admin/webpack.config.ts",
         "postcssConfig": "apps/admin/postcss.config.js"

@@ -4,6 +4,7 @@ export function App() {
   return (
     <div>
       <NxWelcome title="asset" />
+      hello
     </div>
   );
 }

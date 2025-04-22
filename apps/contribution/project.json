@@ -20,7 +20,7 @@
           "apps/contribution/src/favicon.ico",
           "apps/contribution/src/assets"
         ],
-        "styles": ["apps/contribution/src/styles.tailwind"],
+        "styles": ["apps/contribution/src/styles.css"],
         "scripts": [],
         "webpackConfig": "apps/contribution/webpack.config.ts",
         "postcssConfig": "apps/contribution/postcss.config.js"

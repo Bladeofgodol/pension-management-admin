@@ -17,7 +17,7 @@
         "main": "apps/benefit/src/main.ts",
         "tsConfig": "apps/benefit/tsconfig.app.json",
         "assets": ["apps/benefit/src/favicon.ico", "apps/benefit/src/assets"],
-        "styles": ["apps/benefit/src/styles.tailwind"],
+        "styles": ["apps/benefit/src/styles.css"],
         "scripts": [],
         "webpackConfig": "apps/benefit/webpack.config.ts",
         "postcssConfig": "apps/benefit/postcss.config.js"
