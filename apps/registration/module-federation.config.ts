@@ -2,8 +2,10 @@ import { ModuleFederationConfig } from '@nx/module-federation';
 
 const config: ModuleFederationConfig = {
   name: 'registration',
+
   exposes: {
     './Module': './src/remote-entry.ts',
+    './Dashboard': './src/components/dashboard.tsx',
   },
 };
 

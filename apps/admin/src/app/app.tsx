@@ -1,8 +1,12 @@
 import * as React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import NxWelcome from './nx-welcome';
+import { Route, Routes } from 'react-router-dom';
+import DashboardLayout from '../layouts/dashboardLayout';
+import Login from './login';
 
 const Registration = React.lazy(() => import('registration/Module'));
+const RegistrationDashboard = React.lazy(
+  () => import('registration/Dashboard')
+);
 const Benefit = React.lazy(() => import('benefit/Module'));
 const Contribution = React.lazy(() => import('contribution/Module'));
 const Finance = React.lazy(() => import('finance/Module'));
@@ -11,40 +15,25 @@ const Customer = React.lazy(() => import('customer/Module'));
 
 export function App() {
   return (
-    <React.Suspense fallback={null}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/registration">Registration</Link>
-        </li>
-        <li>
-          <Link to="/benefit">Benefit</Link>
-        </li>
-        <li>
-          <Link to="/contribution">Contribution</Link>
-        </li>
-        <li>
-          <Link to="/finance">Finance</Link>
-        </li>
-        <li>
-          <Link to="/asset">Asset</Link>
-        </li>
-        <li>
-          <Link to="/customer">Customer</Link>
-        </li>
-      </ul>
-      <Routes>
-        <Route path="/" element={<NxWelcome title="admin" />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/benefit" element={<Benefit />} />
-        <Route path="/contribution" element={<Contribution />} />
-        <Route path="/finance" element={<Finance />} />
-        <Route path="/asset" element={<Asset />} />
-        <Route path="/customer" element={<Customer />} />
-      </Routes>
-    </React.Suspense>
+    <Routes>
+      {/* Public Routes */}
+      <Route path="/" element={<Login />} />
+
+      {/* Dashboard Routes */}
+      <Route
+        path="/registration"
+        element={
+          <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <Registration />
+          </DashboardLayout>
+        }
+      />
+      <Route path="/benefit" element={<Benefit />} />
+      <Route path="/contribution" element={<Contribution />} />
+      <Route path="/finance" element={<Finance />} />
+      <Route path="/asset" element={<Asset />} />
+      <Route path="/customer" element={<Customer />} />
+    </Routes>
   );
 }
 
