@@ -1,5 +1,5 @@
 // components/Table.tsx
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface Column<T> {
   key: keyof T;
@@ -14,7 +14,7 @@ interface TableProps<T> {
 
 const Table = <T,>({ data, columns }: TableProps<T>) => {
   return (
-    <div className="overflow-x-auto rounded-lg py-10 px-5 shadow-md">
+    <div className="overflow-x-auto rounded-lg py-10 px-5 bg-white">
       <table className="min-w-full divide-gray-200">
         <thead className="bg-gray-100">
           <tr>

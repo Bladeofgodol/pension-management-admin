@@ -12,8 +12,11 @@ export default function DashboardLayout({
 }: DashboardLayoutProps) {
   return (
     <div className="flex h-screen bg-gray-50">
-      {/* Dashboard Sidebar */}
+      <div className='w-1/6'>
       {dashboard}
+
+      </div>
+      {/* Dashboard Sidebar */}
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         {/* Shared Search Bar */}
@@ -22,7 +25,7 @@ export default function DashboardLayout({
         </div>
 
         {/* Page Content */}
-        <main className="flex-1 p-6 overflow-auto bg-[#F8FAFB]">
+        <main className="flex-1 p-6 overflow-auto bg-[#F8FAFB] w-full">
           {children}
         </main>
       </div>

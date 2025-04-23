@@ -16,32 +16,32 @@ export default function Dashboard() {
     {
       name: 'Dashboard',
       icon: <HomeRoundedIcon fontSize="large" />,
-      link: './',
+      link: '/registration',
     },
     {
       name: 'Regions',
       icon: <PlaceOutlinedIcon fontSize="large" />,
-      link: './region',
+      link: '/registration/region',
     },
     {
       name: 'Branches',
       icon: <TableViewIcon fontSize="large" />,
-      link: './branch',
+      link: '/registration/branch',
     },
     {
       name: 'Organizations',
       icon: <StorefrontOutlinedIcon fontSize="large" />,
-      link: './organizations',
+      link: '/registration/organization',
     },
     {
       name: 'Employees',
       icon: <GroupOutlinedIcon fontSize="large" />,
-      link: './employees',
+      link: '/registration/employee',
     },
     {
       name: 'Project',
       icon: <InsertChartOutlinedIcon fontSize="large" />,
-      link: './project',
+      link: '/registration/project',
     },
   ];
 
@@ -62,6 +62,8 @@ export default function Dashboard() {
                 '&:hover': { color: 'black', backgroundColor: '#EDF4FF' },
                 padding: '15px 40px',
                 width: '100%',
+                display: 'flex',
+                justifyContent: 'left',
               }}
             >
               {items.icon}

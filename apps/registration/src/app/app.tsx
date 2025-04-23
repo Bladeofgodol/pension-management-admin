@@ -53,6 +53,7 @@ export function Index() {
         <Chart data={data} />
       </div>
     </div>
+    
   );
 }
 
