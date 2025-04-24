@@ -13,6 +13,7 @@ const Region = React.lazy(() => import('registration/Region'));
 const Branch = React.lazy(() => import('registration/Branch'));
 const Employee = React.lazy(() => import('registration/Employee'));
 const Organization = React.lazy(() => import('registration/Organization'));
+const Project = React.lazy(() => import('registration/Project'));
 
 const Benefit = React.lazy(() => import('benefit/Module'));
 const Contribution = React.lazy(() => import('contribution/Module'));
@@ -67,12 +68,20 @@ export function App() {
           </DashboardLayout>
         }
       />
+      <Route
+        path="/registration/project"
+        element={
+          <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <Project />
+          </DashboardLayout>
+        }
+      />
 
       <Route path="/benefit" element={<Benefit />} />
       <Route path="/contribution" element={<Contribution />} />
-      <Route path="/finance" element={<Finance />} />
-      <Route path="/asset" element={<Asset />} />
-      <Route path="/customer" element={<Customer />} />
+      <Route path="/fundFinance" element={<Finance />} />
+      <Route path="/investmentAsset" element={<Asset />} />
+      <Route path="/customerService" element={<Customer />} />
     </Routes>
   );
 }

@@ -123,7 +123,7 @@ export function LoginPage() {
         <img
           src={AdminBg}
           alt="admin background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-right"
         />
       </div>
     </div>

@@ -1,4 +1,3 @@
-import EditNoteIcon from '@mui/icons-material/EditNote';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
@@ -6,12 +5,13 @@ import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
 import TableViewIcon from '@mui/icons-material/TableView';
 import { Button } from '@mui/material';
-import { Link } from 'react-router-dom';
-
-// Update the image import path according to your project structure
+import { Link, useLocation } from 'react-router-dom';
+import dashIcon from '../assets/imgs/icons/registration.png';
 import POESSA from '../assets/imgs/logos/POESSA.png';
 
 export default function Dashboard() {
+  const location = useLocation();
+
   const dashItem = [
     {
       name: 'Dashboard',
@@ -46,38 +46,50 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="h-full bg-white w-full items-center flex flex-col">
+    <div className="h-full bg-white w-full items-center flex flex-col py-5">
       <div className="flex gap-5 p-5">
-        <div>
-          <EditNoteIcon sx={{ fontSize: 60 }} />
+        <div className="flex items-center">
+          <img src={dashIcon} width={60} alt="Dashboard icon" />
         </div>
-        <div className="text-2xl font-bold">Pension Registration</div>
+        <div className="text-lg font-bold">Pension Registration</div>
       </div>
+
       <div className="font-semibold py-10 gap-1 flex flex-col w-full">
-        {dashItem.map((items, index) => (
-          <Link key={index} to={items.link}>
-            <Button
-              sx={{
-                color: '#AEB9BE',
-                '&:hover': { color: 'black', backgroundColor: '#EDF4FF' },
-                padding: '15px 40px',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'left',
-              }}
-            >
-              {items.icon}
-              <div className="px-5">{items.name}</div>
-            </Button>
-          </Link>
-        ))}
+        {dashItem.map((item, index) => {
+          const isActive = location.pathname === item.link;
+
+          return (
+            <Link key={index} to={item.link}>
+              <Button
+                sx={{
+                  color: isActive ? 'black' : '#AEB9BE',
+                  backgroundColor: isActive ? '#EDF4FF' : 'inherit',
+                  '&:hover': {
+                    color: 'black',
+                    backgroundColor: '#EDF4FF',
+                  },
+                  padding: '15px 40px',
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  textTransform: 'none',
+                  borderRadius: 0,
+                }}
+              >
+                {item.icon}
+                <div className="px-5">{item.name}</div>
+              </Button>
+            </Link>
+          );
+        })}
       </div>
-      <div className="flex flex-col justify-end items-center h-full py-10">
-        <div className="gap-5 flex items-center font-bold text-lg ">
+
+      <div className="flex flex-col justify-end items-center h-full mt-auto">
+        <div className="gap-5 flex items-center font-bold text-lg">
           <div className="w-20 h-20">
             <img
               src={POESSA}
-              alt="poessa"
+              alt="POESSA logo"
               className="w-full h-full object-contain"
             />
           </div>

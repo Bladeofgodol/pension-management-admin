@@ -23,3 +23,8 @@ declare module 'registration/Organization' {
   const Component: React.ComponentType;
   export default Component;
 }
+
+declare module 'registration/Project' {
+  const Component: React.ComponentType;
+  export default Component;
+}

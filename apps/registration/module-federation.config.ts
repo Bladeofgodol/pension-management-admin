@@ -10,6 +10,7 @@ const config: ModuleFederationConfig = {
     './Branch': './src/app/branch.tsx',
     './Organization': './src/app/organizations.tsx',
     './Employee': './src/app/employees.tsx',
+    './Project': './src/app/project.tsx',
   },
 };
 
