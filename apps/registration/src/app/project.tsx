@@ -92,7 +92,7 @@ const ProjectsTable = () => {
   return (
     <div className="p-6 ">
       <div className="w-full flex justify-end">
-        <Link to="/form?field=region">
+        <Link to="/registration/form?field=project">
           <Button
             sx={{
               backgroundColor: '#DFF0FF',

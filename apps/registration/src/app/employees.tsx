@@ -97,7 +97,7 @@ const EmployeesTable = () => {
   return (
     <div className="p-6">
       <div className="w-full flex justify-end">
-        <Link to="/form?field=employee">
+      <Link to="/registration/form?field=employee">
           <Button
             sx={{
               backgroundColor: "#DFF0FF",

@@ -14,6 +14,7 @@ const Branch = React.lazy(() => import('registration/Branch'));
 const Employee = React.lazy(() => import('registration/Employee'));
 const Organization = React.lazy(() => import('registration/Organization'));
 const Project = React.lazy(() => import('registration/Project'));
+const RegistrationForm = React.lazy(() => import('registration/Form'));
 
 const Benefit = React.lazy(() => import('benefit/Module'));
 const Contribution = React.lazy(() => import('contribution/Module'));
@@ -76,8 +77,23 @@ export function App() {
           </DashboardLayout>
         }
       />
+      <Route
+        path="/registration/form"
+        element={
+          <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <RegistrationForm />
+          </DashboardLayout>
+        }
+      />
 
-      <Route path="/benefit" element={<Benefit />} />
+      <Route
+        path="/benefit"
+        element={
+          <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <Benefit />
+          </DashboardLayout>
+        }
+      />
       <Route path="/contribution" element={<Contribution />} />
       <Route path="/fundFinance" element={<Finance />} />
       <Route path="/investmentAsset" element={<Asset />} />

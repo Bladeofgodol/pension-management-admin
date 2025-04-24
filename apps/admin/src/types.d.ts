@@ -28,3 +28,7 @@ declare module 'registration/Project' {
   const Component: React.ComponentType;
   export default Component;
 }
+declare module 'registration/Form' {
+  const Component: React.ComponentType;
+  export default Component;
+}

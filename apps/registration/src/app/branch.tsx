@@ -36,7 +36,7 @@ const BranchesTable = () => {
     },
   ];
 
-  const columns:any = [
+  const columns: any = [
     { key: 'name', header: 'Name' },
     { key: 'region', header: 'Region' },
     { key: 'openingDate', header: 'Opening Date' },
@@ -94,7 +94,7 @@ const BranchesTable = () => {
   return (
     <div className="p-6">
       <div className="w-full flex justify-end">
-        <Link to="/form?field=branch">
+        <Link to="/registration/form?field=branch">
           <Button
             sx={{
               backgroundColor: '#DFF0FF',
