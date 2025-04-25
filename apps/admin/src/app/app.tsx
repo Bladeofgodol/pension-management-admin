@@ -20,8 +20,24 @@ const Benefit = React.lazy(() => import('benefit/Module'));
 const BenefitDashboard = React.lazy(() => import('benefit/Dashboard'));
 const BenefitEntitlement = React.lazy(() => import('benefit/Entitlement'));
 const BenefitRetiree = React.lazy(() => import('benefit/Retiree'));
+const BenefitReport = React.lazy(() => import('benefit/Report'));
 
 const Contribution = React.lazy(() => import('contribution/Module'));
+const ContributionDashboard = React.lazy(
+  () => import('contribution/Dashboard')
+);
+const ContributionContribution = React.lazy(
+  () => import('contribution/Contribution')
+);
+const ContributionOutstanding = React.lazy(
+  () => import('contribution/Outstanding')
+);
+const ContributionRecordContribution = React.lazy(
+  () => import('contribution/RecordContrib')
+);
+const ContributionMissingContribution = React.lazy(
+  () => import('contribution/MissingContrib')
+);
 const Finance = React.lazy(() => import('finance/Module'));
 const Asset = React.lazy(() => import('asset/Module'));
 const Customer = React.lazy(() => import('customer/Module'));
@@ -122,7 +138,55 @@ export function App() {
           </DashboardLayout>
         }
       />
-      <Route path="/contribution" element={<Contribution />} />
+      <Route
+        path="/benefit/report"
+        element={
+          <DashboardLayout dashboard={<BenefitDashboard />}>
+            <BenefitReport />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/contribution"
+        element={
+          <DashboardLayout dashboard={<ContributionDashboard />}>
+            <Contribution />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/contribution/contribution"
+        element={
+          <DashboardLayout dashboard={<ContributionDashboard />}>
+            <ContributionContribution />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/contribution/outstanding"
+        element={
+          <DashboardLayout dashboard={<ContributionDashboard />}>
+            <ContributionOutstanding />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/contribution/recordcontrib"
+        element={
+          <DashboardLayout dashboard={<ContributionDashboard />}>
+            <ContributionRecordContribution />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/contribution/missingContrib"
+        element={
+          <DashboardLayout dashboard={<ContributionDashboard />}>
+            <ContributionMissingContribution />
+          </DashboardLayout>
+        }
+      />
+
       <Route path="/fundFinance" element={<Finance />} />
       <Route path="/investmentAsset" element={<Asset />} />
       <Route path="/customerService" element={<Customer />} />

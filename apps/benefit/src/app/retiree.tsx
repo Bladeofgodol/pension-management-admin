@@ -79,19 +79,7 @@ const RetireeTable = () => {
   return (
     <div className="p-6 ">
       <div className="w-full flex justify-end">
-        <Link to="/benefit/form?field=retiree">
-          <Button
-            sx={{
-              backgroundColor: '#DFF0FF',
-              color: 'black',
-              padding: '5px 15px',
-              fontWeight: 'bold',
-              borderRadius: 2,
-            }}
-          >
-            Add new retirees
-          </Button>
-        </Link>
+        
       </div>
 
       <h1 className="text-xl font-bold mb-4">

@@ -14,21 +14,21 @@ const EntitlementTable = () => {
   const entitlementData: EntitlementData[] = [
     {
       name: 'Abebe Yelma',
-      salary:"13,000",
+      salary: '13,000',
       applicationDate: 'January 20, 2022',
       eligibilityDate: 'January 20, 2022',
       status: 'In Action',
     },
     {
       name: 'Abiy Assefa',
-      salary:"18,000",
+      salary: '18,000',
       applicationDate: 'January 20, 2022',
       eligibilityDate: 'January 20, 2022',
       status: 'In Action',
     },
     {
       name: 'Abel Alem',
-      salary:"15,000",
+      salary: '15,000',
       applicationDate: 'January 20, 2022',
       eligibilityDate: 'January 20, 2022',
       status: 'In Action',
@@ -59,18 +59,20 @@ const EntitlementTable = () => {
       key: 'actions',
       render: () => (
         <div className="space-x-5 ">
-          <Button
-            sx={{
-              color: 'white',
-              backgroundColor: '#008000',
-              borderRadius: '7px',
-              fontWeight: '550',
-              fontSize: 11,
-              padding:"5px 40px"
-            }}
-          >
-            Review
-          </Button>
+          <Link to="/benefit/report">
+            <Button
+              sx={{
+                color: 'white',
+                backgroundColor: '#008000',
+                borderRadius: '7px',
+                fontWeight: '550',
+                fontSize: 11,
+                padding: '5px 40px',
+              }}
+            >
+              Review
+            </Button>
+          </Link>
         </div>
       ),
     },
@@ -78,21 +80,7 @@ const EntitlementTable = () => {
 
   return (
     <div className="p-6 ">
-      <div className="w-full flex justify-end">
-        <Link to="/benefit/form?field=entitlement">
-          <Button
-            sx={{
-              backgroundColor: '#DFF0FF',
-              color: 'black',
-              padding: '5px 15px',
-              fontWeight: 'bold',
-              borderRadius: 2,
-            }}
-          >
-            Add new entitlement
-          </Button>
-        </Link>
-      </div>
+      <div className="w-full flex justify-end"></div>
 
       <h1 className="text-xl font-bold mb-4">
         Beneficiaries application for retirement

@@ -48,3 +48,27 @@ declare module 'benefit/Retiree' {
   const Component: React.ComponentType;
   export default Component;
 }
+declare module 'benefit/Report' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'contribution/Dashboard' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'contribution/Contribution' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'contribution/Outstanding' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'contribution/RecordContrib' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'contribution/MissingContrib' {
+  const Component: React.ComponentType;
+  export default Component;
+}
