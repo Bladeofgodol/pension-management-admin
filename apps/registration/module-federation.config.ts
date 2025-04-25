@@ -12,6 +12,7 @@ const config: ModuleFederationConfig = {
     './Employee': './src/app/employees.tsx',
     './Project': './src/app/project.tsx',
     './Form': './src/app/form.tsx',
+    './Report': './src/app/report.tsx',
   },
 };
 

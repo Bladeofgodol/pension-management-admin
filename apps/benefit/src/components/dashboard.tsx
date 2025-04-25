@@ -1,12 +1,9 @@
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import ElderlyRoundedIcon from '@mui/icons-material/ElderlyRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import TableViewIcon from '@mui/icons-material/TableView';
+import PaidOutlinedIcon from '@mui/icons-material/PaidOutlined';
 import { Button } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
-import dashIcon from '../assets/imgs/icons/registration.png';
+import dashIcon from '../assets/imgs/icons/benefit.png';
 import POESSA from '../assets/imgs/logos/POESSA.png';
 
 export default function Dashboard() {
@@ -16,42 +13,31 @@ export default function Dashboard() {
     {
       name: 'Dashboard',
       icon: <HomeRoundedIcon fontSize="large" />,
-      link: '/registration',
+      link: '/benefit',
     },
     {
-      name: 'Regions',
-      icon: <PlaceOutlinedIcon fontSize="large" />,
-      link: '/registration/region',
+      name: 'Entitlement',
+      icon: <PaidOutlinedIcon fontSize="large" />,
+      link: '/benefit/entitlement',
     },
     {
-      name: 'Branches',
-      icon: <TableViewIcon fontSize="large" />,
-      link: '/registration/branch',
-    },
-    {
-      name: 'Organizations',
-      icon: <StorefrontOutlinedIcon fontSize="large" />,
-      link: '/registration/organization',
-    },
-    {
-      name: 'Employees',
-      icon: <GroupOutlinedIcon fontSize="large" />,
-      link: '/registration/employee',
-    },
-    {
-      name: 'Project',
-      icon: <InsertChartOutlinedIcon fontSize="large" />,
-      link: '/registration/project',
+      name: 'Retirees',
+      icon: <ElderlyRoundedIcon fontSize="large" />,
+      link: '/benefit/retirees',
     },
   ];
 
   return (
-    <div className="h-full bg-white w-full items-center flex flex-col py-5">
-      <div className="flex gap-5 p-5">
+    <div className="h-full bg-white w-full items-center flex flex-col py-10">
+      <div className="flex gap-5 px-10 w-full">
         <div className="flex items-center">
           <img src={dashIcon} width={60} alt="Dashboard icon" />
         </div>
-        <div className="text-lg font-bold">Pension Registration</div>
+        <span className="text-lg font-bold align-middle">
+          Pension
+          <br />
+          Benefit
+        </span>
       </div>
 
       <div className="font-semibold py-10 gap-1 flex flex-col w-full">

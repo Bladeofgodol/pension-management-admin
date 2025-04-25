@@ -1,49 +1,52 @@
-// pages/Employees.tsx
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Table from '../components/table';
 
-interface RegionData {
+interface RetireeData {
   name: string;
-  organization: string;
+  salary: string;
+  applicationDate: string;
   eligibilityDate: string;
   status: string;
 }
 
-const EmployeesTable = () => {
-  const EmployeesData: RegionData[] = [
+const RetireeTable = () => {
+  const retireeData: RetireeData[] = [
     {
       name: 'Abebe Yelma',
-      organization: 'Org 1',
+      salary:"13,000",
+      applicationDate: 'January 20, 2022',
       eligibilityDate: 'January 20, 2022',
-      status: 'In action',
+      status: 'Retired',
     },
     {
       name: 'Abiy Assefa',
-      organization: 'Org 2',
+      salary:"18,000",
+      applicationDate: 'January 20, 2022',
       eligibilityDate: 'January 20, 2022',
-      status: 'In action',
+      status: 'Retired',
     },
     {
       name: 'Abel Alem',
-      organization: 'Org 1',
-      eligibilityDate: 'January 20, 2024',
-      status: 'Retiree',
+      salary:"15,000",
+      applicationDate: 'January 20, 2022',
+      eligibilityDate: 'January 20, 2022',
+      status: 'Retired',
     },
   ];
 
   const columns: any = [
     { key: 'name', header: 'Name' },
-    { key: 'organization', header: 'Organization' },
+    { key: 'salary', header: 'Salary' },
+    { key: 'applicationDate', header: 'Application Date' },
     { key: 'eligibilityDate', header: 'Eligibility Date' },
-
     {
       key: 'status',
       header: 'Status',
-      render: (value: any) => (
+      render: (value: string) => (
         <span
           className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-            value === 'In action'
+            value === 'Retired'
               ? 'bg-blue-100 text-blue-800'
               : 'bg-orange-100 text-orange-800'
           }`}
@@ -53,43 +56,20 @@ const EmployeesTable = () => {
       ),
     },
     {
-      key: 'status', // Reusing key for actions
+      key: 'actions',
       render: () => (
         <div className="space-x-5 ">
-          <Link to="/registration/report">
-            <Button
-              sx={{
-                color: 'white',
-                backgroundColor: '#008000',
-                borderRadius: '7px',
-                fontWeight: '550',
-                fontSize: 11,
-              }}
-            >
-              Generate Report
-            </Button>
-          </Link>
           <Button
             sx={{
               color: 'white',
-              backgroundColor: '#034B64',
+              backgroundColor: '#008000',
               borderRadius: '7px',
               fontWeight: '550',
               fontSize: 11,
+              padding:"5px 40px"
             }}
           >
-            Edit
-          </Button>
-          <Button
-            sx={{
-              color: 'white',
-              backgroundColor: 'red',
-              borderRadius: '7px',
-              fontWeight: '550',
-              fontSize: 11,
-            }}
-          >
-            Delete
+            Reassign benefit
           </Button>
         </div>
       ),
@@ -97,9 +77,9 @@ const EmployeesTable = () => {
   ];
 
   return (
-    <div className="p-6">
+    <div className="p-6 ">
       <div className="w-full flex justify-end">
-        <Link to="/registration/form?field=employee">
+        <Link to="/benefit/form?field=retiree">
           <Button
             sx={{
               backgroundColor: '#DFF0FF',
@@ -109,14 +89,17 @@ const EmployeesTable = () => {
               borderRadius: 2,
             }}
           >
-            Add new Employee
+            Add new retirees
           </Button>
         </Link>
       </div>
-      <h1 className="text-xl font-bold mb-4">Employees</h1>
-      <Table data={EmployeesData} columns={columns} />
+
+      <h1 className="text-xl font-bold mb-4">
+        Beneficiaries application for retirement
+      </h1>
+      <Table data={retireeData} columns={columns} />
     </div>
   );
 };
 
-export default EmployeesTable;
+export default RetireeTable;

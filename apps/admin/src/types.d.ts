@@ -32,3 +32,19 @@ declare module 'registration/Form' {
   const Component: React.ComponentType;
   export default Component;
 }
+declare module 'registration/Report' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'benefit/Dashboard' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'benefit/Entitlement' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'benefit/Retiree' {
+  const Component: React.ComponentType;
+  export default Component;
+}

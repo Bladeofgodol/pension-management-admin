@@ -8,15 +8,19 @@ const Registration = React.lazy(() => import('registration/Module'));
 const RegistrationDashboard = React.lazy(
   () => import('registration/Dashboard')
 );
-
 const Region = React.lazy(() => import('registration/Region'));
 const Branch = React.lazy(() => import('registration/Branch'));
 const Employee = React.lazy(() => import('registration/Employee'));
 const Organization = React.lazy(() => import('registration/Organization'));
 const Project = React.lazy(() => import('registration/Project'));
 const RegistrationForm = React.lazy(() => import('registration/Form'));
+const RegistrationReport = React.lazy(() => import('registration/Report'));
 
 const Benefit = React.lazy(() => import('benefit/Module'));
+const BenefitDashboard = React.lazy(() => import('benefit/Dashboard'));
+const BenefitEntitlement = React.lazy(() => import('benefit/Entitlement'));
+const BenefitRetiree = React.lazy(() => import('benefit/Retiree'));
+
 const Contribution = React.lazy(() => import('contribution/Module'));
 const Finance = React.lazy(() => import('finance/Module'));
 const Asset = React.lazy(() => import('asset/Module'));
@@ -85,12 +89,36 @@ export function App() {
           </DashboardLayout>
         }
       />
+      <Route
+        path="/registration/report"
+        element={
+          <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <RegistrationReport />
+          </DashboardLayout>
+        }
+      />
 
       <Route
         path="/benefit"
         element={
-          <DashboardLayout dashboard={<RegistrationDashboard />}>
+          <DashboardLayout dashboard={<BenefitDashboard />}>
             <Benefit />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/benefit/entitlement"
+        element={
+          <DashboardLayout dashboard={<BenefitDashboard />}>
+            <BenefitEntitlement />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/benefit/retirees"
+        element={
+          <DashboardLayout dashboard={<BenefitDashboard />}>
+            <BenefitRetiree />
           </DashboardLayout>
         }
       />

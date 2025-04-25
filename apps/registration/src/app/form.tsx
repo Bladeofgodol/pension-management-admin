@@ -4,13 +4,12 @@ import {
   FormControl,
   MenuItem,
   Select,
-  TextareaAutosize,
   TextField,
 } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function Form() {
   const [searchParams] = useSearchParams();
@@ -272,7 +271,10 @@ export default function Form() {
       {
         name: 'Description',
         field: (
-          <textarea className='w-full p-3 border-b resize-none h-36 bg-inherit' placeholder='Project Description. . .'/>
+          <textarea
+            className="w-full p-3 border-b resize-none h-36 bg-inherit"
+            placeholder="Project Description. . ."
+          />
         ),
       },
       {
@@ -332,6 +334,11 @@ export default function Form() {
   // Get the fields for the current page or default to empty array
   const currentFields = (page && fields[page as keyof typeof fields]) || [];
 
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="justify-center flex w-full h-full py-10">
       <div className="border p-10 w-2/6 h-fit border-[#D7DEDD]">
@@ -344,6 +351,7 @@ export default function Form() {
                 color: 'red',
               },
             }}
+            onClick={goBack}
           >
             <CloseRoundedIcon fontSize="large" />
           </Button>
@@ -370,6 +378,7 @@ export default function Form() {
           </Button>
           <Button
             sx={{ color: 'white', backgroundColor: '#FAA86D', borderRadius: 2 }}
+            onClick={goBack}
           >
             Back
           </Button>
