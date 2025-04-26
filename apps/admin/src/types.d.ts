@@ -89,3 +89,19 @@ declare module 'finance/Retiree' {
   const Component: React.ComponentType;
   export default Component;
 }
+declare module 'asset/Dashboard' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'asset/Investment' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'asset/Form' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'asset/Assets' {
+  const Component: React.ComponentType;
+  export default Component;
+}

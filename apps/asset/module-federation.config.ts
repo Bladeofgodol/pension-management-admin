@@ -4,6 +4,10 @@ const config: ModuleFederationConfig = {
   name: 'asset',
   exposes: {
     './Module': './src/remote-entry.ts',
+    './Dashboard': './src/components/dashboard.tsx',
+    './Investment': './src/app/investment.tsx',
+    './Assets': './src/app/assets.tsx',
+    './Form': './src/app/form.tsx',
   },
 };
 

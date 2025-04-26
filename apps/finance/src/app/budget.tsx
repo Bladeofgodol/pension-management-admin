@@ -72,17 +72,19 @@ const BudgetTable = () => {
           >
             Edit
           </Button>
-          <Button
-            sx={{
-              color: 'white',
-              backgroundColor: 'red',
-              borderRadius: '7px',
-              fontWeight: '550',
-              fontSize: 11,
-            }}
-          >
-            Delete
-          </Button>
+          <Link to="./delete?id=1">
+            <Button
+              sx={{
+                color: 'white',
+                backgroundColor: 'red',
+                borderRadius: '7px',
+                fontWeight: '550',
+                fontSize: 11,
+              }}
+            >
+              Delete
+            </Button>
+          </Link>
         </div>
       ),
     },

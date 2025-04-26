@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import DashboardLayout from '../layouts/dashboardLayout';
@@ -46,7 +47,14 @@ const FinanceForm = React.lazy(() => import('finance/Form'));
 const FinanceRetiree = React.lazy(() => import('finance/Retiree'));
 
 const Asset = React.lazy(() => import('asset/Module'));
+const AssetDashboard = React.lazy(() => import('asset/Dashboard'));
+const AssetInvestment = React.lazy(() => import('asset/Investment'));
+const AssetForm = React.lazy(() => import('asset/Form'));
+const AssetAssets = React.lazy(() => import('asset/Assets'));
+
 const Customer = React.lazy(() => import('customer/Module'));
+
+const Loading = () => <div>Loading...</div>;
 
 export function App() {
   return (
@@ -307,6 +315,25 @@ export function App() {
         }
       />
       <Route
+        path="/fundFinance/budget/delete"
+        element={
+          <DashboardLayout
+            dashboard={<FinanceDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Budget 1 entry from the system
+                </div>
+              </div>
+            }
+          >
+            <FinanceBudget />
+          </DashboardLayout>
+        }
+      />
+      <Route
         path="/fundFinance/form"
         element={
           <DashboardLayout dashboard={<FinanceDashboard />}>
@@ -322,8 +349,93 @@ export function App() {
           </DashboardLayout>
         }
       />
+      <Route
+        path="/investmentAsset"
+        element={
+          <DashboardLayout dashboard={<AssetDashboard />}>
+            <Asset />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/investmentAsset/investment"
+        element={
+          <DashboardLayout dashboard={<AssetDashboard />}>
+            <AssetInvestment />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/investmentAsset/form"
+        element={
+          <DashboardLayout dashboard={<AssetDashboard />}>
+            <AssetForm />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/investmentAsset/investment/delete"
+        element={
+          <DashboardLayout
+            dashboard={<AssetDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="flex items-center gap-5">
+                  <div>Amount sold for</div>
+                  <TextField
+                    id="standard-basic"
+                    variant="standard"
+                    type="number"
+                  />
+                </div>
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete inv 1 entry from the system
+                </div>
+              </div>
+            }
+          >
+            <AssetInvestment />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/investmentAsset/assets/delete"
+        element={
+          <DashboardLayout
+            dashboard={<AssetDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="flex items-center gap-5">
+                  <div>Amount sold for</div>
+                  <TextField
+                    id="standard-basic"
+                    variant="standard"
+                    type="number"
+                  />
+                </div>
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Asset 1 entry from the system
+                </div>
+              </div>
+            }
+          >
+            <AssetAssets />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/investmentAsset/assets"
+        element={
+          <DashboardLayout dashboard={<AssetDashboard />}>
+            <AssetAssets />
+          </DashboardLayout>
+        }
+      />
 
-      <Route path="/investmentAsset" element={<Asset />} />
       <Route path="/customerService" element={<Customer />} />
     </Routes>
   );
