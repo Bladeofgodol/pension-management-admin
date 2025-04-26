@@ -38,7 +38,13 @@ const ContributionRecordContribution = React.lazy(
 const ContributionMissingContribution = React.lazy(
   () => import('contribution/MissingContrib')
 );
+
 const Finance = React.lazy(() => import('finance/Module'));
+const FinanceDashboard = React.lazy(() => import('finance/Dashboard'));
+const FinanceBudget = React.lazy(() => import('finance/Budget'));
+const FinanceForm = React.lazy(() => import('finance/Form'));
+const FinanceRetiree = React.lazy(() => import('finance/Retiree'));
+
 const Asset = React.lazy(() => import('asset/Module'));
 const Customer = React.lazy(() => import('customer/Module'));
 
@@ -57,10 +63,30 @@ export function App() {
           </DashboardLayout>
         }
       />
+
       <Route
         path="/registration/region"
         element={
           <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <Region />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/registration/region/delete"
+        element={
+          <DashboardLayout
+            dashboard={<RegistrationDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Region 1 entry from the system
+                </div>
+              </div>
+            }
+          >
             <Region />
           </DashboardLayout>
         }
@@ -74,9 +100,47 @@ export function App() {
         }
       />
       <Route
+        path="/registration/branch/delete"
+        element={
+          <DashboardLayout
+            dashboard={<RegistrationDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Branch 1 entry from the system
+                </div>
+              </div>
+            }
+          >
+            <Branch />
+          </DashboardLayout>
+        }
+      />
+      <Route
         path="/registration/organization"
         element={
           <DashboardLayout dashboard={<RegistrationDashboard />}>
+            <Organization />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/registration/organization/delete"
+        element={
+          <DashboardLayout
+            dashboard={<RegistrationDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Org 1 entry from the system
+                </div>
+              </div>
+            }
+          >
             <Organization />
           </DashboardLayout>
         }
@@ -90,6 +154,25 @@ export function App() {
         }
       />
       <Route
+        path="/registration/employee/delete"
+        element={
+          <DashboardLayout
+            dashboard={<RegistrationDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Abebe Yelema entry from the system
+                </div>
+              </div>
+            }
+          >
+            <Employee />
+          </DashboardLayout>
+        }
+      />
+      <Route
         path="/registration/project"
         element={
           <DashboardLayout dashboard={<RegistrationDashboard />}>
@@ -97,6 +180,26 @@ export function App() {
           </DashboardLayout>
         }
       />
+      <Route
+        path="/registration/project/delete"
+        element={
+          <DashboardLayout
+            dashboard={<RegistrationDashboard />}
+            blur={true}
+            deleteMessage={
+              <div className="py-5 gap-5 flex flex-col">
+                <div className="text-2xl font-bold">Are You Sure</div>
+                <div className="text-xl text-grey">
+                  This will delete Project 1 entry from the system
+                </div>
+              </div>
+            }
+          >
+            <Project />
+          </DashboardLayout>
+        }
+      />
+
       <Route
         path="/registration/form"
         element={
@@ -187,7 +290,39 @@ export function App() {
         }
       />
 
-      <Route path="/fundFinance" element={<Finance />} />
+      <Route
+        path="/fundFinance"
+        element={
+          <DashboardLayout dashboard={<FinanceDashboard />}>
+            <Finance />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/fundFinance/budget"
+        element={
+          <DashboardLayout dashboard={<FinanceDashboard />}>
+            <FinanceBudget />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/fundFinance/form"
+        element={
+          <DashboardLayout dashboard={<FinanceDashboard />}>
+            <FinanceForm />
+          </DashboardLayout>
+        }
+      />
+      <Route
+        path="/fundFinance/retiree"
+        element={
+          <DashboardLayout dashboard={<FinanceDashboard />}>
+            <FinanceRetiree />
+          </DashboardLayout>
+        }
+      />
+
       <Route path="/investmentAsset" element={<Asset />} />
       <Route path="/customerService" element={<Customer />} />
     </Routes>
