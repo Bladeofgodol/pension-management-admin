@@ -36,6 +36,7 @@ declare module 'registration/Report' {
   const Component: React.ComponentType;
   export default Component;
 }
+
 declare module 'benefit/Dashboard' {
   const Component: React.ComponentType;
   export default Component;
@@ -69,6 +70,22 @@ declare module 'contribution/RecordContrib' {
   export default Component;
 }
 declare module 'contribution/MissingContrib' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'finance/Dashboard' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'finance/Budget' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'finance/Form' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'finance/Retiree' {
   const Component: React.ComponentType;
   export default Component;
 }
