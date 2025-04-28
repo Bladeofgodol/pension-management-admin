@@ -47,6 +47,7 @@ const dataset = [
 const chartSettingsH: Partial<BarChartProps> = {
   dataset,
   height: 300,
+
   yAxis: [{ scaleType: 'band', dataKey: 'order' }],
   slotProps: {
     legend: {

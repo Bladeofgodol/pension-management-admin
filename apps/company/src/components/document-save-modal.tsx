@@ -3,7 +3,10 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Search, ChevronDown, FolderClosed, File } from "lucide-react"
+import FolderClosed from '@mui/icons-material/Folder';
+import ChevronDown from '@mui/icons-material/KeyboardArrowDown';
+import File from '@mui/icons-material/FilePresent';
+import { Search } from "@mui/icons-material";
 
 interface DocumentSaveModalProps {
   onClose: () => void
