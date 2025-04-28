@@ -1,9 +1,8 @@
-import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import ElderlyIcon from '@mui/icons-material/Elderly';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
-import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
-import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import TableViewIcon from '@mui/icons-material/TableView';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import PieChartOutlineIcon from '@mui/icons-material/PieChartOutline';
 import { Button } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 import dashIcon from '../assets/imgs/icons/contribution.png';
@@ -16,32 +15,27 @@ export default function Dashboard() {
     {
       name: 'Dashboard',
       icon: <HomeRoundedIcon fontSize="large" />,
-      link: '/registration',
+      link: '/',
     },
     {
-      name: 'Regions',
-      icon: <PlaceOutlinedIcon fontSize="large" />,
-      link: '/registration/region',
+      name: 'Report',
+      icon: <PieChartOutlineIcon fontSize="large" />,
+      link: '/report',
     },
     {
-      name: 'Branches',
-      icon: <TableViewIcon fontSize="large" />,
-      link: '/registration/branch',
+      name: 'Employee',
+      icon: <PeopleAltIcon fontSize="large" />,
+      link: '/employeesPage',
     },
     {
-      name: 'Organizations',
-      icon: <StorefrontOutlinedIcon fontSize="large" />,
-      link: '/registration/organization',
+      name: 'Projects',
+      icon: <AnalyticsIcon fontSize="large" />,
+      link: '/projects',
     },
     {
-      name: 'Employees',
-      icon: <GroupOutlinedIcon fontSize="large" />,
-      link: '/registration/employee',
-    },
-    {
-      name: 'Project',
-      icon: <InsertChartOutlinedIcon fontSize="large" />,
-      link: '/registration/project',
+      name: 'Eligible retirees',
+      icon: <ElderlyIcon fontSize="large" />,
+      link: '/retirees',
     },
   ];
 
