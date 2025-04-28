@@ -38,9 +38,7 @@ export default function DashboardLayout({
       </div>
       {blur && (
         <div className="fixed inset-0 bg-black/10 backdrop-blur-[1px] z-10 h-screen w-screen flex justify-center items-center">
-          <Delete>
-            {deleteMessage}
-          </Delete>
+          <Delete>{deleteMessage}</Delete>
         </div>
       )}
     </div>

@@ -1,12 +1,9 @@
-import AnalyticsIcon from '@mui/icons-material/Analytics';
-import ElderlyIcon from '@mui/icons-material/Elderly';
+import ForumIcon from '@mui/icons-material/Forum';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import PieChartOutlineIcon from '@mui/icons-material/PieChartOutline';
 import { Button } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
-import dashIcon from '../assets/imgs/icons/contribution.png';
-import OrgLogo from '../assets/imgs/logos/company Logo.png';
+import dashIcon from '../assets/imgs/icons/customer service.png';
+import POESSA from '../assets/imgs/logos/POESSA.png';
 
 export default function Dashboard() {
   const location = useLocation();
@@ -15,37 +12,26 @@ export default function Dashboard() {
     {
       name: 'Dashboard',
       icon: <HomeRoundedIcon fontSize="large" />,
-      link: '/home',
+      link: '/customerService',
     },
     {
-      name: 'Report',
-      icon: <PieChartOutlineIcon fontSize="large" />,
-      link: '/report',
-    },
-    {
-      name: 'Employee',
-      icon: <PeopleAltIcon fontSize="large" />,
-      link: '/employeesPage',
-    },
-    {
-      name: 'Projects',
-      icon: <AnalyticsIcon fontSize="large" />,
-      link: '/projects',
-    },
-    {
-      name: 'Eligible retirees',
-      icon: <ElderlyIcon fontSize="large" />,
-      link: '/retirees',
+      name: 'Live Chat',
+      icon: <ForumIcon fontSize="large" />,
+      link: '/customerService/live',
     },
   ];
 
   return (
-    <div className="h-full bg-white w-full items-center flex flex-col py-5">
-      <div className="flex gap-5 p-5">
+    <div className="h-full bg-white w-full items-center flex flex-col py-10">
+      <div className="flex gap-5 px-10 w-full">
         <div className="flex items-center">
           <img src={dashIcon} width={60} alt="Dashboard icon" />
         </div>
-        <div className="text-lg font-bold">Pension Contribution</div>
+        <span className="text-lg font-bold align-middle">
+          Investment
+          <br />
+          and Asset
+        </span>
       </div>
 
       <div className="font-semibold py-10 gap-1 flex flex-col w-full">
@@ -82,12 +68,12 @@ export default function Dashboard() {
         <div className="gap-5 flex items-center font-bold text-lg">
           <div className="w-20 h-20">
             <img
-              src={OrgLogo}
-              alt="Org logo"
+              src={POESSA}
+              alt="POESSA logo"
               className="w-full h-full object-contain"
             />
           </div>
-          <div>Org 1</div>
+          <div>POESSA</div>
         </div>
       </div>
     </div>

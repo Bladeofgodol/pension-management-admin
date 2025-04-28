@@ -4,6 +4,8 @@ const config: ModuleFederationConfig = {
   name: 'customer',
   exposes: {
     './Module': './src/remote-entry.ts',
+    './Dashboard': './src/components/dashboard.tsx',
+    './Live': './src/app/liveChat.tsx',
   },
 };
 

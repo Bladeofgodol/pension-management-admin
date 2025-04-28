@@ -105,3 +105,11 @@ declare module 'asset/Assets' {
   const Component: React.ComponentType;
   export default Component;
 }
+declare module 'customer/Dashboard' {
+  const Component: React.ComponentType;
+  export default Component;
+}
+declare module 'customer/Live' {
+  const Component: React.ComponentType;
+  export default Component;
+}
