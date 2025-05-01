@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Assuming these images are in the public folder
-import AdminBg from '../assets/imgs/adminLoginBg.png';
+import AdminBg from '../assets/imgs/admin.png';
 import POESSA from '../assets/imgs/logos/POESSA.png';
 import PSSSA from '../assets/imgs/logos/PSSSA.png';
 import users from '../data/admin-users.json';
@@ -39,9 +39,9 @@ export function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="w-1/2 flex flex-col justify-between h-full">
-        <div className="flex justify-end mb-4 items-center">
+    <div className="flex items-center justify-center h-screen bg-white">
+      <div className="w-1/2 flex flex-col justify-between h-full items-center">
+        <div className="flex justify-end mb-4 items-center w-full">
           <LanguageIcon />
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
             <Select
@@ -55,67 +55,72 @@ export function LoginPage() {
           </FormControl>
         </div>
 
-        <div className="flex justify-around mb-4 h-full flex-col p-20">
-          <h1 className="text-3xl font-bold text-primary mb-4">
-            Pension related services all in one place
-          </h1>
-          <p className="text-lg text-grey mb-4">Please login to your account</p>
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="flex justify-around mb-4 h-fit flex-col p-10 shadow-lg w-3/5 rounded-3xl border">
+            <h1 className="text-3xl font-bold text-primary mb-4 text-center">
+              Pension related services all in one place
+            </h1>
+            <p className="text-lg text-grey mb-4">
+              Please login to your account
+            </p>
 
-          <div className="flex flex-col w-full gap-5">
-            <TextField
-              error={error}
-              label="Email"
-              variant="standard"
-              fullWidth
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setError(false);
-              }}
-            />
-            <TextField
-              error={error}
-              label="Password"
-              type="password"
-              variant="standard"
-              fullWidth
-              helperText={error ? 'Incorrect Email or password.' : ''}
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                setError(false);
-              }}
-            />
-          </div>
+            <div className="flex flex-col w-full gap-10">
+              <TextField
+                error={error}
+                label="Email"
+                variant="standard"
+                fullWidth
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setError(false);
+                }}
+                style={{ fontSize: 90 }}
+              />
+              <TextField
+                error={error}
+                label="Password"
+                type="password"
+                variant="standard"
+                fullWidth
+                helperText={error ? 'Incorrect Email or password.' : ''}
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                  setError(false);
+                }}
+              />
+            </div>
 
-          <div className="flex justify-between my-4">
-            <FormControlLabel
-              control={<Checkbox sx={{ color: '#00000080' }} />}
-              sx={{ color: '#00000080' }}
-              label="Remember Me"
-            />
-            <button className="text-grey">Forgot Password</button>
-          </div>
+            <div className="flex justify-between my-4">
+              <FormControlLabel
+                control={<Checkbox sx={{ color: '#00000080' }} />}
+                sx={{ color: '#00000080' }}
+                label="Remember Me"
+              />
+              <button className="text-grey">Forgot Password</button>
+            </div>
 
-          <div className="w-full flex justify-center">
-            <Button
-              variant="outlined"
-              sx={{
-                padding: '10px 50px',
-                borderRadius: '10px',
-                color: '#3751FE',
-                fontWeight: '550',
-              }}
-              onClick={handleLogin}
-            >
-              Login
-            </Button>
+            <div className="w-full flex justify-center">
+              <Button
+                variant="outlined"
+                sx={{
+                  padding: '10px 50px',
+                  borderRadius: '10px',
+                  color: '#3751FE',
+                  fontWeight: '550',
+                }}
+                onClick={handleLogin}
+              >
+                Login
+              </Button>
+            </div>
           </div>
         </div>
 
-        <div className="flex justify-around mb-4 h-1/3">
-          <img src={POESSA} alt="poessa" className="h-60 w-60 object-contain" />
-          <img src={PSSSA} alt="psssa" className="h-60 w-60 object-contain" />
+        <div className="flex justify-around mb-4 h-1/3 p-10 gap-20">
+          <img src={POESSA} alt="poessa" className="h-48 w-48 object-contain" />
+          <img src={PSSSA} alt="psssa" className="h-40 w-40 object-contain" />
         </div>
       </div>
 

@@ -53,8 +53,9 @@ const AssetForm = React.lazy(() => import('asset/Form'));
 const AssetAssets = React.lazy(() => import('asset/Assets'));
 
 const Customer = React.lazy(() => import('customer/Module'));
-const CustomerDashboard = React.lazy(() => import('customer/Dashboard'));
+const CustomerDashboard = React.lazy(() => import('customer/Dash'));
 const CustomerLive = React.lazy(() => import('customer/Live'));
+const CustomerD = React.lazy(() => import('customer/D'));
 
 const Loading = () => <div>Loading...</div>;
 
@@ -441,15 +442,16 @@ export function App() {
       <Route
         path="/customerService"
         element={
-          <DashboardLayout dashboard={<CustomerDashboard />}>
+          <DashboardLayout dashboard={<CustomerD />}>
             <Customer />
           </DashboardLayout>
         }
       />
+
       <Route
         path="/customerService/live"
         element={
-          <DashboardLayout dashboard={<CustomerDashboard />}>
+          <DashboardLayout dashboard={<CustomerD />}>
             <CustomerLive />
           </DashboardLayout>
         }

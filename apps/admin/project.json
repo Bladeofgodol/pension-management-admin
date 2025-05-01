@@ -52,7 +52,15 @@
       "options": {
         "buildTarget": "admin:build",
         "hmr": true,
-        "port": 4200
+        "port": 4200,
+        "devRemotes": [
+          "registration",
+          "customer",
+          "contribution",
+          "benefit",
+          "finance",
+          "asset"
+        ]
       },
       "configurations": {
         "development": {

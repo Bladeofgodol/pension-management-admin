@@ -25,12 +25,14 @@ const prodConfig: ModuleFederationConfig = {
    * ]
    */
   remotes: [
-    ['registration', 'http://localhost:4201/'],
-    ['benefit', 'http://localhost:4202/'],
-    ['contribution', 'http://localhost:4203/'],
-    ['finance', 'http://localhost:4204/'],
-    ['asset', 'http://localhost:4205/'],
-    ['customer', 'http://localhost:4206/'],
+    // Always include the remoteEntry.js path
+    ['registration', 'http://localhost:4201/remoteEntry.js'],
+    ['benefit', 'http://localhost:4202/remoteEntry.js'],
+    ['contribution', 'http://localhost:4203/remoteEntry.js'],
+    ['finance', 'http://localhost:4204/remoteEntry.js'],
+    ['asset', 'http://localhost:4205/remoteEntry.js'],
+    // Match customer's port from project.json (4205)
+    ['customer', 'http://localhost:4206/remoteEntry.js'],
   ],
 };
 

@@ -7,17 +7,22 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Assuming these images are in the public folder
-import CompanyBg from '../assets/imgs/company bg.png';
+import CompanyBg from '../assets/imgs/HR.png';
 import POESSA from '../assets/imgs/logos/POESSA.png';
 import PSSSA from '../assets/imgs/logos/PSSSA.png';
 import users from '../data/admin-users.json';
 
 export function LoginPage() {
+  const [blurred, setBlurEffect] = useState(false);
   const [language, setLanguage] = useState('en');
   const [error, setError] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const handleFocus = (value: boolean) => {
+    setBlurEffect(value);
+  };
 
   const handleLogin = () => {
     const isValidUser = (email: string): email is keyof typeof users => {
@@ -40,8 +45,8 @@ export function LoginPage() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-wite">
-      <div className="w-1/2 flex flex-col justify-between h-full">
-        <div className="flex justify-end mb-4 items-center">
+      <div className="w-1/2 flex flex-col justify-between h-full items-center">
+        <div className="flex justify-end mb-4 items-center w-full">
           <LanguageIcon />
           <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
             <Select
@@ -55,7 +60,7 @@ export function LoginPage() {
           </FormControl>
         </div>
 
-        <div className="flex justify-around mb-4 h-full flex-col p-20">
+        <div className="flex justify-around mb-4 h-full flex-col p-20 shadow-lg w-3/5 rounded-3xl border">
           <h1 className="text-3xl font-bold text-primary mb-4 text-center">
             Pension related services all in one place (Organization Portal)
           </h1>
@@ -113,18 +118,26 @@ export function LoginPage() {
           </div>
         </div>
 
-        <div className="flex justify-around mb-10 h-1/3">
+        <div className="flex justify-around mb-10 h-1/3 gap-20">
           <img src={PSSSA} alt="psssa" className="h-48 w-48 object-contain" />
           <img src={POESSA} alt="poessa" className="h-52 w-52 object-contain" />
         </div>
       </div>
 
       <div className="w-1/2 h-full">
-        <img
-          src={CompanyBg}
-          alt="company background"
-          className="w-full h-full object-cover"
-        />
+        {blurred ? (
+          <img
+            src={CompanyBg}
+            alt="company background"
+            className="w-full h-full object-cover object-top blur"
+          />
+        ) : (
+          <img
+            src={CompanyBg}
+            alt="company background"
+            className="w-full h-full object-cover object-top"
+          />
+        )}
       </div>
     </div>
   );
