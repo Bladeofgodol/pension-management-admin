@@ -1,5 +1,6 @@
 import { TextField } from '@mui/material';
 import * as React from 'react';
+import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import DashboardLayout from '../layouts/dashboardLayout';
 import Login from './login';
@@ -57,7 +58,11 @@ const CustomerDashboard = React.lazy(() => import('customer/Dash'));
 const CustomerLive = React.lazy(() => import('customer/Live'));
 const CustomerD = React.lazy(() => import('customer/D'));
 
-const Loading = () => <div>Loading...</div>;
+const Loading = () => (
+  <div className="w-full h-screen flex justify-center items-center">
+    Loading...
+  </div>
+);
 
 export function App() {
   return (
@@ -69,9 +74,11 @@ export function App() {
       <Route
         path="/registration"
         element={
-          <DashboardLayout dashboard={<RegistrationDashboard />}>
-            <Registration />
-          </DashboardLayout>
+          <Suspense fallback={<Loading />}>
+            <DashboardLayout dashboard={<RegistrationDashboard />}>
+              <Registration />
+            </DashboardLayout>
+          </Suspense>
         }
       />
 
@@ -433,27 +440,32 @@ export function App() {
       <Route
         path="/investmentAsset/assets"
         element={
-          <DashboardLayout dashboard={<AssetDashboard />}>
-            <AssetAssets />
-          </DashboardLayout>
+          <Suspense fallback={<Loading />}>
+            <DashboardLayout dashboard={<AssetDashboard />}>
+              <AssetAssets />
+            </DashboardLayout>
+          </Suspense>
         }
       />
 
       <Route
         path="/customerService"
         element={
-          <DashboardLayout dashboard={<CustomerD />}>
-            <Customer />
-          </DashboardLayout>
+          <Suspense fallback={<Loading />}>
+            <DashboardLayout dashboard={<CustomerD />}>
+              <Customer />
+            </DashboardLayout>
+          </Suspense>
         }
       />
-
       <Route
         path="/customerService/live"
         element={
-          <DashboardLayout dashboard={<CustomerD />}>
-            <CustomerLive />
-          </DashboardLayout>
+          <Suspense fallback={<Loading />}>
+            <DashboardLayout dashboard={<CustomerD />}>
+              <CustomerLive />
+            </DashboardLayout>
+          </Suspense>
         }
       />
     </Routes>

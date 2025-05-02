@@ -1,7 +1,7 @@
-import { composePlugins, withNx } from '@nx/webpack';
-import { withReact } from '@nx/react';
-import { withModuleFederation } from '@nx/module-federation/webpack';
 import { ModuleFederationConfig } from '@nx/module-federation';
+import { withModuleFederation } from '@nx/module-federation/webpack';
+import { withReact } from '@nx/react';
+import { composePlugins, withNx } from '@nx/webpack';
 
 import baseConfig from './module-federation.config';
 
@@ -31,7 +31,6 @@ const prodConfig: ModuleFederationConfig = {
     ['contribution', 'http://localhost:4203/remoteEntry.js'],
     ['finance', 'http://localhost:4204/remoteEntry.js'],
     ['asset', 'http://localhost:4205/remoteEntry.js'],
-    // Match customer's port from project.json (4205)
     ['customer', 'http://localhost:4206/remoteEntry.js'],
   ],
 };
