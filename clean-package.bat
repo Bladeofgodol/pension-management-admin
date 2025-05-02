@@ -30,6 +30,9 @@ set NX_CLOUD_ACCESS_TOKEN=
 echo Installing dependencies...
 npm install
 
+echo Resetting Nx cache...
+npx nx reset
+
 echo.
-echo ✅ Nx workspace cleaned successfully!
+echo ✅ Nx workspace cleaned and reset successfully!
 pause
