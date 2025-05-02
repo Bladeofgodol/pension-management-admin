@@ -2,7 +2,9 @@
   "name": "@pension-management-admin/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start-admin": "cross-env NODE_OPTIONS=--max-old-space-size=4096 nx serve admin"
+  },
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.14.5",
