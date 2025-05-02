@@ -15,7 +15,6 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "6807e1ff9b99bb2f29b29bf7",
   "plugins": [
     {
       "plugin": "@nx/react/router-plugin",

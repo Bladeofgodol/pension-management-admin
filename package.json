@@ -60,6 +60,7 @@
     "@mui/x-charts": "^8.0.0",
     "@mui/x-date-pickers": "^8.1.0",
     "date-fns": "^4.1.0",
+    "node-polyfill-webpack-plugin": "^4.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0"
