@@ -118,7 +118,7 @@ export function LoginPage() {
           </div>
         </div>
 
-        <div className="flex justify-around mb-10 h-1/3 gap-20">
+        <div className="flex justify-around mb-10 h-1/3 gap-20 items-center">
           <img src={PSSSA} alt="psssa" className="h-48 w-48 object-contain" />
           <img src={POESSA} alt="poessa" className="h-52 w-52 object-contain" />
         </div>
